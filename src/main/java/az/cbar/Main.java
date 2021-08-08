@@ -10,19 +10,12 @@ import java.util.List;
 
 
 public class Main {
-
     public static void main(String[] args) {
         BaseParser<ValType> baseParser = new JaxBParser();
-        List<ValType> valTypes = baseParser.parse();
-        ValType valType = valTypes.stream()
-                .filter(valType1 -> valType1.getType().equals("Xarici valyutalar"))
-                .findFirst()
-                .orElseThrow(() -> new RuntimeException("Specified currency not found!"));
-
+        ValType valType = ((JaxBParser) baseParser).getValutes();
         BaseWriter<Valute> baseWriter = new DatabaseWriter();
-        baseWriter.write(valType.getValute());
+        System.out.println(baseWriter.write(valType.getValute()));
 
     }
-
 
 }

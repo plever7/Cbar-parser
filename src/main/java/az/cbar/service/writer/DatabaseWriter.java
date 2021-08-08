@@ -11,7 +11,7 @@ import java.util.List;
 public class DatabaseWriter implements BaseWriter<Valute> {
 
     @Override
-    public List<Valute> write(List<Valute> valute) {
+    public boolean write(List<Valute> valute) {
         CurrencyDao currencyDao = new CurrencyDaoImpl();
         valute.forEach(valute1 -> {
             Currency currency = new Currency();
@@ -21,7 +21,7 @@ public class DatabaseWriter implements BaseWriter<Valute> {
             currency.setCode(valute1.getCode());
             currencyDao.save(currency);
         });
-        return valute;
+        return true;
     }
 
 }

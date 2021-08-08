@@ -32,4 +32,14 @@ public class JaxBParser implements BaseParser<ValType> {
         }
         return valCurs.getValType();
     }
+
+    public ValType getValutes() {
+
+        List<ValType> valTypes = parse();
+
+        return valTypes.stream()
+                .filter(valType1 -> valType1.getType().equals("Xarici valyutalar"))
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Specified item not found!"));
+    }
 }
