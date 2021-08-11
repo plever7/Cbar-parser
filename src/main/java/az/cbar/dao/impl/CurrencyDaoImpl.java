@@ -14,16 +14,7 @@ public class CurrencyDaoImpl implements CurrencyDao {
 
     @Override
     public List<az.cbar.entity.Currency> findAll() {
-//        try {
-//            List list = new ArrayList();
-//            EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("NewPersistenceUnit");
-//            EntityManager entityManager = entityManagerFactory.createEntityManager();
-//            return entityManager.createQuery("select e from EmployeeEntity e").getResultList();
-//        } catch (Exception e) {
-//            System.out.println(e.getMessage());
-//        }
         return null;
-
     }
 
     @Override
